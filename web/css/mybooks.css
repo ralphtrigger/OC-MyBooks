@@ -8,6 +8,10 @@ and open the template in the editor.
     Author     : trigger
 */
 
+body {
+    padding-top: 50px;
+}
+
 .footer{
     border-top: 1px solid #ccc;
     padding-top: 10px;
