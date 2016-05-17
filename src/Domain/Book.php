@@ -32,6 +32,7 @@ class Book
 
     /**
      * Book summary.
+     * 
      * @var string
      */
     private $summary;
@@ -42,6 +43,13 @@ class Book
      * @var string
      */
     private $isbn;
+
+    /**
+     * Associate Author.
+     * 
+     * @var Author
+     */
+    private $author;
 
     public function getId()
     {
@@ -81,6 +89,16 @@ class Book
     public function setIsbn($isbn)
     {
         $this->isbn = $isbn;
+    }
+
+    public function getAuthor()
+    {
+        return $this->author;
+    }
+
+    public function setAuthor(Author $author)
+    {
+        $this->author = $author;
     }
 
 }
