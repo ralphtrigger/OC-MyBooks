@@ -1,8 +1,18 @@
 <?php
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+use MyBooks\DAO\BookDAO;
+use Silex\Provider\DoctrineServiceProvider;
+use Symfony\Component\Debug\ErrorHandler;
+use Symfony\Component\Debug\ExceptionHandler;
 
+// Register global error and exception handler
+ErrorHandler::register();
+ExceptionHandler::register();
+
+// Register service providers
+$app->register(new DoctrineServiceProvider());
+
+// Register services
+$app['dao.book'] = $app->share(function ($app) {
+    return new BookDAO($app['db']);
+});

@@ -7,11 +7,12 @@
  */
 
 // Home page
-$app->get('/', function() {
-    ob_start();
-    require '../src/modele.php';
-    $books = getBooks();
-    require '../views/view.php';
-
-    return ob_get_clean();
+$app->get('/', function() use ($app) {
+   $books = $app['dao.book']->findAll();
+   
+   ob_start();
+   require __DIR__.'/../views/view.php';
+   $view = ob_get_clean();
+   
+   return $view;
 });

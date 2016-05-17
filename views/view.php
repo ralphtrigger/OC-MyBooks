@@ -13,8 +13,8 @@
         foreach ($books as $book):
             ?>
             <article>
-                <h2><?= $book['book_title'] ?></h2>
-                <p><?= $book['book_summary'] ?></p>
+                <h2><?= $book->getTitle() ?></h2>
+                <p><?= $book->getSummary() ?></p>
             </article>
         <?php endforeach; ?>
         <footer class="footer">
